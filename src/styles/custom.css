@@ -1,0 +1,5 @@
+.f-col-center {
+  @apply flex flex-col justify-center items-center;
+}
+
+/* body */

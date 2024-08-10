@@ -1,0 +1,71 @@
+<template>
+  
+    <div
+      class="relative flex flex-col lg:flex-row justify-between items-center w-full h-full gap-12"
+    >
+      <div
+        class="flex flex-col justify-center items-center lg:items-start text-center lg:text-start mt-8 lg:mt-0 gap-10 lg:gap-6 w-full lg:w-1/2 h-full select-none"
+      >
+        <h1
+          class="text-5xl lg:text-[54px] xl:text-[64px] font-black text-primary-800 leading-[1.1]"
+        >
+          Making Tricky <br />
+          Deliveries Simple
+        </h1>
+        <p class="text-lg text-gray-600">
+          List your delivery and get it delivered by our trusted community of
+          travelers.
+        </p>
+        <SearchBookingPickup class="z-20" />
+        <div class="flex flex-row justify-center items-center gap-4">
+          <div class="relative">
+            <Badge class="fill-yellow-600 stroke-yellow-600" :size="96" />
+            <p
+              class="absolute text-center top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2 font-black text-2xl text-white leading-[1.1]"
+            >
+              O DZ
+            </p>
+          </div>
+          <p class="text-xl font-semibold">
+            for listing <br />
+            your item
+          </p>
+        </div>
+      </div>
+      <div class="flex flex-col justify-center items-end h-full select-none">
+        <!-- stop user  from selecting  -->
+        <img
+          src="@/assets/images/bg-hero.webp"
+          class="bg-cover hidden lg:flex lg:h-[400px] xl:h-[450px] bg-hero-img"
+          alt="hero"
+        />
+      </div>
+    </div>
+
+</template>
+
+<script setup lang="ts">
+import { Badge } from "lucide-vue-next";
+</script>
+
+<style scoped lang="scss">
+.list-move,
+.list-enter-active,
+.list-leave-active {
+  transition: all 3s ease;
+}
+
+.list-enter-from {
+  opacity: 0;
+  transform: translateX(-50%);
+}
+
+.list-leave-to {
+  opacity: 0;
+  transform: translateX(50%);
+}
+
+.list-leave-active {
+  position: absolute;
+}
+</style>
