@@ -57,8 +57,7 @@
                     variant="ghost"
                     type="button"
                   >
-                    <i-app-eye v-if="showPassword" />
-                    <i-app-eye-off v-else />
+                   
                   </Button>
                 </div>
               </FormControl>

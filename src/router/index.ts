@@ -16,7 +16,7 @@ const routes: Array<RouteRecordRaw> = [
         name: "Welcome",
         path: "",
         component: () =>
-          import("@/modules/anonymous/welcome/views/welcome.vue"),
+          import("@/modules/anonymous/welcome/views/Welcome.vue"),
       },
     ],
   },
