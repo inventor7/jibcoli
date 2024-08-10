@@ -50,7 +50,7 @@ async function loadLocaleWithCache(locale: string) {
   }
 
   // If not in cache or error occurred, load from file
-  const url = `/locales/${locale}.json`;
+  const url = `/src/locales/${locale}.json`;
   try {
     const response = await fetch(url);
     console.log(response);
