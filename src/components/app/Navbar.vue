@@ -27,9 +27,7 @@
 
       <div class="flex flex-row justify-end items-center gap-4 sm:gap-8 w-1/3">
         <Translate />
-        <Avatar>
-          <User :size="isDesktop ? 20 : 16" />
-        </Avatar>
+        <AccountInfo />
       </div>
     </nav>
   </div>
@@ -41,7 +39,6 @@ import { House } from "lucide-vue-next";
 import { BookMarked } from "lucide-vue-next";
 import { Navigation } from "lucide-vue-next";
 import { MessageCircle } from "lucide-vue-next";
-import { User } from "lucide-vue-next";
 
 const isDesktop = useMediaQuery("(min-width: 768px)");
 </script>

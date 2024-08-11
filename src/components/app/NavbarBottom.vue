@@ -24,6 +24,8 @@ import { House } from "lucide-vue-next";
 import { BookMarked } from "lucide-vue-next";
 import { Navigation } from "lucide-vue-next";
 import { MessageCircle } from "lucide-vue-next";
+
+import { RouterView } from "vue-router";
 </script>
 
 <style scoped>
