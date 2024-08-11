@@ -1,14 +1,64 @@
 {
   "brandName": "JibiiColi",
   "mainHeading1": "Simplifier les ",
-   "mainHeading2": "livraisons difficiles",
+  "mainHeading2": "livraisons difficiles",
   "description": "Listez votre livraison et faites-la livrer par notre communauté de confiance de voyageurs.",
   "fromLabel": "De...",
- "bookTripButton": "Réserver un ramassage",
+  "bookTripButton": "Réserver un ramassage",
   "PubsishTripButton": "Publier un voyage",
   "listingLabel1": "pour lister ",
-    "listingLabel2": "votre article",
-   "lang":"language",
-   "nothingFound":"Aucun résultat trouvé",
-    "bookTrip": "Réserver un voyage"
+  "listingLabel2": "votre article",
+  "lang": "language",
+  "nothingFound": "Aucun résultat trouvé",
+  "bookTrip": "Réserver un voyage",
+
+  "login": {
+    "login": "Connexion",
+    "description": "Entrez votre e-mail et votre mot de passe pour vous connecter à votre compte",
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "forgotPassword": "Mot de passe oublié ?",
+    "noAccount": "Vous n'avez pas de compte ?",
+    "register": "S'inscrire",
+    "loginButton": "Se connecter",
+    "loginWithGoogle": "Se connecter avec Google",
+    "loginWithFacebook": "Se connecter avec Facebook",
+    "placeholder": {
+      "email": "Entrez votre e-mail",
+      "password": "Entrez votre mot de passe"
+    },
+    "loading": "Chargement...",
+    "status": {
+      "success": "Connexion réussie",
+      "successDescription": "Vous êtes connecté avec succès",
+      "error": "Échec de la connexion",
+      "errorDescription": "Une erreur s'est produite lors de la connexion. Veuillez réessayer"
+    }
+  },
+  "register": {
+    "register": "S'inscrire",
+    "description": "Entrez vos informations ci-dessous pour créer un compte",
+    "name": "Nom",
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "confirmPassword": "Confirmer le mot de passe",
+    "registerButton": "S'inscrire",
+    "alreadyHaveAccount": "Vous avez déjà un compte ?",
+    "login": "Se connecter",
+    "registerWithGoogle": "S'inscrire avec Google",
+    "registerWithFacebook": "S'inscrire avec Facebook",
+    "placeholder": {
+      "name": "Entrez votre nom",
+      "email": "Entrez votre e-mail",
+      "password": "Entrez votre mot de passe",
+      "confirmPassword": "Confirmez votre mot de passe"
+    },
+    "loading": "Chargement...",
+    "status": {
+      "success": "Inscription réussie",
+      "successDescription": "Vous êtes inscrit avec succès",
+      "error": "Échec de l'inscription",
+      "errorDescription": "Une erreur s'est produite lors de l'inscription. Veuillez réessayer"
+    }
+  }
 }

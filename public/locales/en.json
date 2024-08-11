@@ -1,16 +1,65 @@
 {
   "brandName": "JibiiColi",
   "mainHeading1": "Making Tricky",
-    "mainHeading2": "Deliveries Simple",
+  "mainHeading2": "Deliveries Simple",
   "description": "List your delivery and get it delivered by our trusted community of trippers.",
   "fromLabel": "From...",
   "bookTripButton": "Book a Pickup",
-    "PubsishTripButton": "Pubslish a Travel",
-
+  "PubsishTripButton": "Pubslish a Travel",
   "listingLabel1": "for listing ",
-    "listingLabel2": "your item",
+  "listingLabel2": "your item",
+  "lang": "language",
+  "nothingFound": "No results found",
+  "bookTrip": "Book a Trip",
 
-  "lang":"language",
-  "nothingFound":"No results found",
-  "bookTrip": "Book a Trip"
+  "login": {
+    "login": "Login",
+    "description": "Enter your email and password to login to your account",
+    "email": "Email",
+    "password": "Password",
+    "forgotPassword": "Forgot Password?",
+    "noAccount": "Don't have an account?",
+    "register": "Register",
+    "loginButton": "Login",
+    "loginWithGoogle": "Login with Google",
+    "loginWithFacebook": "Login with Facebook",
+    "placeholder": {
+      "email": "Enter your email",
+      "password": "Enter your password"
+    },
+    "loading": "Loading...",
+    "status": {
+      "success": "Login successful",
+      "successDescription": "You have been successfully logged in",
+      "error": "Login failed",
+      "errorDescription": "Error occurred while logging in. Please try again"
+    }
+  },
+
+  "register": {
+    "register": "Register",
+    "description": "Enter your details below to create an account",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "registerButton": "Register",
+    "alreadyHaveAccount": "Already have an account?",
+    "login": "Login",
+    "registerWithGoogle": "Register with Google",
+    "registerWithFacebook": "Register with Facebook",
+    "placeholder": {
+      "name": "Enter your name",
+      "email": "Enter your email",
+      "password": "Enter your password",
+      "confirmPassword": "Confirm your password"
+    },
+    "loading": "Loading...",
+    "status": {
+      "success": "Registration successful",
+      "successDescription": "You have been successfully registered",
+      "error": "Registration failed",
+      "errorDescription": "Error occurred while registering. Please try again"
+    }
+  }
 }

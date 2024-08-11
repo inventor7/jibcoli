@@ -7,8 +7,8 @@ import { toast } from "@/components/ui/toast/use-toast";
 import { type RegisterCredentials } from "@/types/authTypes";
 import { useAuthRegister } from "@/modules/anonymous/auth/composables/useAuthRegister";
 import { useAuthGetUser } from "@/modules/anonymous/auth/composables/useAuthGetUser";
-import { Button } from "@/components/ui/button";
 import { transformValidationErrors } from "@/utils/auth/formErrorHandler";
+import { useI18n } from "vue-i18n";
 
 const { execute: register, onError, onSuccess, isLoading } = useAuthRegister();
 const {
@@ -18,6 +18,7 @@ const {
 } = useAuthGetUser();
 
 const router = useRouter();
+const { t } = useI18n();
 
 const formSchema = toTypedSchema(
   z
@@ -48,8 +49,8 @@ const onSubmit = handleSubmit(async (values: RegisterCredentials) => {
 
 onSuccess((res) => {
   toast({
-    title: "Registration successful",
-    description: "You have been registered successfully.",
+    title: t("register.status.success"),
+    description: t("register.status.successDescription"),
     variant: "success",
   });
   getUser();
@@ -61,8 +62,8 @@ onError((error) => {
     setErrors(transformedErrors);
   } else {
     toast({
-      title: "Registration failed",
-      description: error.message || "An error occurred while registering.",
+      title: t("register.status.error"),
+      description: error.message || t("register.status.errorDescription"),
       variant: "destructive",
     });
   }
@@ -83,12 +84,17 @@ onUserError((error) => {
 </script>
 
 <template>
-  <div class="flex flex-col justify-center items-center w-full h-screen">
-    <Card class="mx-auto max-w-sm">
+  <div
+    style="height: calc(100vh - 120px)"
+    class="flex flex-col justify-center items-center overflow-y-scroll h-full w-full"
+  >
+    <Card class="mx-auto border-none max-w-sm">
       <CardHeader>
-        <CardTitle class="text-2xl"> Register </CardTitle>
+        <CardTitle class="text-2xl">
+          {{ $t("register.register") }}
+        </CardTitle>
         <CardDescription>
-          Enter your details below to create an account
+          {{ $t("register.description") }}
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -100,7 +106,9 @@ onUserError((error) => {
               :validate-on-blur="!isFieldDirty"
             >
               <FormItem>
-                <FormLabel>Name</FormLabel>
+                <FormLabel>
+                  {{ $t("register.name") }}
+                </FormLabel>
                 <FormControl>
                   <Input
                     type="text"
@@ -120,7 +128,9 @@ onUserError((error) => {
               :validate-on-blur="!isFieldDirty"
             >
               <FormItem>
-                <FormLabel>Email</FormLabel>
+                <FormLabel>
+                  {{ $t("register.email") }}
+                </FormLabel>
                 <FormControl>
                   <Input
                     type="email"
@@ -140,11 +150,13 @@ onUserError((error) => {
             :validate-on-blur="!isFieldDirty"
           >
             <FormItem>
-              <FormLabel>Password</FormLabel>
+              <FormLabel>
+                {{ $t("register.password") }}
+              </FormLabel>
               <FormControl>
                 <Input
                   type="password"
-                  placeholder="Enter your password"
+                  :placeholder="$t('register.placeholder.password')"
                   v-bind="componentField"
                   autocomplete="new-password"
                 />
@@ -160,11 +172,13 @@ onUserError((error) => {
             :validate-on-blur="!isFieldDirty"
           >
             <FormItem>
-              <FormLabel>Confirm Password</FormLabel>
+              <FormLabel>
+                {{ $t("register.confirmPassword") }}
+              </FormLabel>
               <FormControl>
                 <Input
                   type="password"
-                  placeholder="Confirm your password"
+                  :placeholder="$t('register.placeholder.confirmPassword')"
                   v-bind="componentField"
                   autocomplete="new-password"
                 />
@@ -175,17 +189,17 @@ onUserError((error) => {
           </FormField>
 
           <Button type="submit" class="w-full" :disabled="isLoading">
-            {{ isLoading ? "Logging in..." : "Login" }}
+            {{ isLoading ? $t("register.loading") : $t("register.register") }}
           </Button>
           <Button variant="outline" class="w-full">
-            Register with Google
+            {{ $t("register.registerWithGoogle") }}
           </Button>
         </form>
 
         <div class="mt-4 text-center text-sm">
-          Already have an account?
+          {{ $t("register.alreadyHaveAccount") }}
           <router-link class="underline text-primary" :to="{ name: 'Login' }">
-            Login
+            {{ $t("register.login") }}
           </router-link>
         </div>
       </CardContent>

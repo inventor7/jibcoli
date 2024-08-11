@@ -1,14 +1,64 @@
 {
   "brandName": "JibiiColi",
   "mainHeading1": "تبسيط التوصيلات ",
-   "mainHeading2": "الصعبة",
+  "mainHeading2": "الصعبة",
   "description": "قم بإدراج حاجتك واحصل على توصيلها من قبل مجتمعنا الموثوق به من  الموصلين.",
   "fromLabel": "من...",
   "bookTripButton": " حجز استلام",
   "PubsishTripButton": "نشر رحلة",
   "listingLabel1": "لإدراج ",
-   "listingLabel2": "عرضك",
-  "lang":"اللغة",
-  "nothingFound":"لم يتم العثور على أي نتائج",
-  "bookTrip": "حجز رحلة"
+  "listingLabel2": "عرضك",
+  "lang": "اللغة",
+  "nothingFound": "لم يتم العثور على أي نتائج",
+  "bookTrip": "حجز رحلة",
+
+  "login": {
+    "login": "تسجيل الدخول",
+    "description": "أدخل بريدك الإلكتروني وكلمة المرور لتسجيل الدخول إلى حسابك",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "forgotPassword": "نسيت كلمة المرور؟",
+    "noAccount": "ليس لديك حساب؟",
+    "register": "التسجيل",
+    "loginButton": "تسجيل الدخول",
+    "loginWithGoogle": "تسجيل الدخول باستخدام جوجل",
+    "loginWithFacebook": "تسجيل الدخول باستخدام فيسبوك",
+    "placeholder": {
+      "email": "أدخل بريدك الإلكتروني",
+      "password": "أدخل كلمة المرور"
+    },
+    "loading": "جار التحميل...",
+    "status": {
+      "success": "تم تسجيل الدخول بنجاح",
+      "successDescription": "لقد تم تسجيل الدخول بنجاح",
+      "error": "فشل تسجيل الدخول",
+      "errorDescription": "حدث خطأ أثناء تسجيل الدخول. يرجى المحاولة مرة أخرى"
+    }
+  },
+  "register": {
+    "register": "التسجيل",
+    "description": "أدخل بياناتك أدناه لإنشاء حساب",
+    "name": "الاسم",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "registerButton": "التسجيل",
+    "alreadyHaveAccount": "هل لديك حساب بالفعل؟",
+    "login": "تسجيل الدخول",
+    "registerWithGoogle": "التسجيل باستخدام جوجل",
+    "registerWithFacebook": "التسجيل باستخدام فيسبوك",
+    "placeholder": {
+      "name": "أدخل اسمك",
+      "email": "أدخل بريدك الإلكتروني",
+      "password": "أدخل كلمة المرور",
+      "confirmPassword": "تأكيد كلمة المرور"
+    },
+    "loading": "جار التحميل...",
+    "status": {
+      "success": "تم التسجيل بنجاح",
+      "successDescription": "لقد تم التسجيل بنجاح",
+      "error": "فشل التسجيل",
+      "errorDescription": "حدث خطأ أثناء التسجيل. يرجى المحاولة مرة أخرى"
+    }
+  }
 }

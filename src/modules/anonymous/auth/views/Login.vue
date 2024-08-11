@@ -1,10 +1,13 @@
 <template>
-  <div class="flex flex-col justify-center items-center w-full h-screen">
-    <Card class="mx-auto max-w-sm">
+  <div
+    style="height: calc(100vh - 120px)"
+    class="flex flex-col justify-center items-center overflow-y-scroll h-full w-full"
+  >
+    <Card class="mx-auto border-none max-w-sm">
       <CardHeader>
-        <CardTitle class="text-2xl">Login</CardTitle>
+        <CardTitle class="text-2xl">{{ $t("login.login") }}</CardTitle>
         <CardDescription>
-          Enter your email below to login to your account
+          {{ $t("login.description") }}
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -15,7 +18,7 @@
             :validate-on-blur="!isFieldDirty"
           >
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel>{{ $t("login.email") }}</FormLabel>
               <FormControl>
                 <Input
                   type="email"
@@ -37,28 +40,22 @@
             <FormItem>
               <FormLabel>
                 <div class="flex items-center">
-                  <Label for="password">Password</Label>
+                  <Label for="password">
+                    {{ $t("login.password") }}
+                  </Label>
                   <a href="#" class="ml-auto inline-block text-sm underline">
-                    Forgot your password?
+                    {{ $t("login.forgotPassword") }}
                   </a>
                 </div>
               </FormLabel>
               <FormControl>
                 <div class="w-full flex flex-row relative">
                   <Input
-                    :type="showPassword ? 'text' : 'password'"
-                    placeholder="Enter your password"
+                    type="password"
+                    :placeholder="$t('login.placeholder.password')"
                     v-bind="componentField"
                     autocomplete="current-password"
                   />
-                  <Button
-                    @click.prevent="togglePasswordVisibility"
-                    size="icon"
-                    variant="ghost"
-                    type="button"
-                  >
-                   
-                  </Button>
                 </div>
               </FormControl>
               <FormDescription></FormDescription>
@@ -66,18 +63,20 @@
             </FormItem>
           </FormField>
           <Button type="submit" class="w-full" :disabled="isLoading">
-            {{ isLoading ? "Logging in..." : "Login" }}
+            {{ isLoading ? $t("login.loading") : $t("login.login") }}
           </Button>
-          <Button variant="outline" class="w-full"> Login with Google </Button>
+          <Button variant="outline" class="w-full">
+            {{ $t("login.loginWithGoogle") }}
+          </Button>
         </form>
 
         <div class="mt-4 text-center text-sm">
-          Don't have an account?
+          {{ $t("login.noAccount") }}
           <router-link
             class="underline text-primary"
             :to="{ name: 'Register' }"
           >
-            Register
+            {{ $t("login.register") }}
           </router-link>
         </div>
       </CardContent>
@@ -94,8 +93,10 @@ import { toast } from "@/components/ui/toast/use-toast";
 import { type LoginCredentials } from "@/types/authTypes";
 import { useAuthLogin } from "@/modules/anonymous/auth/composables/useAuthLogin";
 import { transformValidationErrors } from "@/utils/auth/formErrorHandler";
+import { useI18n } from "vue-i18n";
 
 const router = useRouter();
+const { t } = useI18n();
 
 const formSchema = toTypedSchema(
   z.object({
@@ -114,8 +115,10 @@ const onSubmit = handleSubmit(async (values: LoginCredentials) => {
   try {
     await login(values);
     toast({
-      title: "Login successful",
-      description: "You have been logged in successfully.",
+      //using i18n
+
+      title: t("login.status.success"),
+      description: t("login.status.successDescription"),
       variant: "success",
     });
     router.push({ name: "Home" });
@@ -127,17 +130,12 @@ const onSubmit = handleSubmit(async (values: LoginCredentials) => {
       setErrors(transformedErrors);
     } else {
       toast({
-        title: "Login failed",
-        description: "An error occurred while logging in.",
+        title: t("login.status.error"),
+        description: t("login.status.errorDescription"),
         variant: "destructive",
       });
     }
   } finally {
   }
 });
-
-const showPassword = ref(false);
-const togglePasswordVisibility = () => {
-  showPassword.value = !showPassword.value;
-};
 </script>
