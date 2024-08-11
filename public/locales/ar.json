@@ -2,11 +2,13 @@
   "brandName": "JibiiColi",
   "mainHeading1": "تبسيط التوصيلات ",
    "mainHeading2": "الصعبة",
-  "description": "قم بإدراج توصيلتك واحصل على توصيلها من قبل مجتمعنا الموثوق به من المسافرين.",
+  "description": "قم بإدراج حاجتك واحصل على توصيلها من قبل مجتمعنا الموثوق به من  الموصلين.",
   "fromLabel": "من...",
-  "bookTripButton": "حجز نقطة التقاط",
+  "bookTripButton": " حجز استلام",
   "PubsishTripButton": "نشر رحلة",
   "listingLabel1": "لإدراج ",
-   "listingLabel2": "غرضك",
-  "lang":"اللغة"
+   "listingLabel2": "عرضك",
+  "lang":"اللغة",
+  "nothingFound":"لم يتم العثور على أي نتائج",
+  "bookTrip": "حجز رحلة"
 }

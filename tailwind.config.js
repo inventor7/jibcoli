@@ -23,6 +23,7 @@ module.exports = {
     },
     fontFamily: {
       sans: ['Inter', 'sans-serif'], // Set Inter as the default sans font
+      arabic: ['IBM Plex Sans Arabic', 'sans-serif'], // Set Cairo as the default arabic font
     },
     extend: {
       colors: {

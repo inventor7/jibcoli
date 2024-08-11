@@ -70,6 +70,7 @@ declare module 'vue' {
     Label: typeof import('./src/components/ui/label/Label.vue')['default']
     Login: typeof import('./src/modules/anonymous/auth/views/Login.vue')['default']
     Navbar: typeof import('./src/components/app/Navbar.vue')['default']
+    NavbarBottom: typeof import('./src/components/app/NavbarBottom.vue')['default']
     Popover: typeof import('./src/components/ui/popover/Popover.vue')['default']
     PopoverContent: typeof import('./src/components/ui/popover/PopoverContent.vue')['default']
     PopoverTrigger: typeof import('./src/components/ui/popover/PopoverTrigger.vue')['default']

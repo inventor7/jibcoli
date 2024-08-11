@@ -14,7 +14,7 @@
                 !field.value && 'text-muted-foreground',
               ]"
             >
-              {{ selectedLanguage ? selectedLanguage.label : "From.." }}
+              {{ selectedLanguage ? selectedLanguage.label : $t("fromLabel") }}
               <ChevronDown class="ml-2 h-4 w-4 shrink-0 opacity-50" />
             </Button>
           </FormControl>
@@ -52,18 +52,20 @@
             :size="isTablet ? 'lg' : 'lg'"
             class="rounded-full justify-between bg-gray-100 w-full sm:w-fit text-base sm:text-lg px-6"
           >
-            {{ selectedLanguage?.value ? selectedLanguage.label : "From.." }}
+            {{
+              selectedLanguage?.value ? selectedLanguage.label : $t("fromLabel")
+            }}
             <ChevronDown class="ml-2 h-4 w-4 shrink-0 opacity-50" />
           </Button>
         </DrawerTrigger>
-        <DrawerContent>
+        <DrawerContent class="min-h-[50vh] max-h-[70vh]">
           <DrawerHeader class="hidden">
             <DrawerTitle></DrawerTitle>
             <DrawerDescription></DrawerDescription>
           </DrawerHeader>
           <Command>
             <CommandInput placeholder="Search language..." />
-            <CommandEmpty>Nothing found.</CommandEmpty>
+            <CommandEmpty>{{ $t("nothingFound") }}</CommandEmpty>
             <CommandList>
               <CommandGroup>
                 <CommandItem
@@ -71,6 +73,7 @@
                   :key="language.value"
                   :value="language.label"
                   @select="onLanguageSelect(language)"
+                  class="text-base"
                 >
                   {{ language.label }}
                   <Check

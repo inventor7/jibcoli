@@ -8,6 +8,7 @@
   "PubsishTripButton": "Publier un voyage",
   "listingLabel1": "pour lister ",
     "listingLabel2": "votre article",
-
-   "lang":"language"
+   "lang":"language",
+   "nothingFound":"Aucun résultat trouvé",
+    "bookTrip": "Réserver un voyage"
 }

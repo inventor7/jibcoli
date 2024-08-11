@@ -79,7 +79,7 @@ const onSubmit = handleSubmit((values) => {
       class="rounded-full w-full sm:w-fit text-xl sm:text-lg px-6 sm:mt-0 mt-3"
       type="submit"
     >
-      Book a Trip
+      {{ $t("bookTrip") }}
     </Button>
   </form>
 </template>

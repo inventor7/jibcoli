@@ -1,6 +1,7 @@
 <template>
   <router-view v-slot="{ Component }">
     <div
+      :class="$i18n.locale === 'ar' ? 'font-arabic' : 'font-sans'"
       class="max-w-[1440px] w-full h-full"
       :dir="$i18n.locale === 'ar' ? 'rtl' : 'ltr'"
     >
@@ -12,8 +13,14 @@
 
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
+import { watch } from "vue";
 
-const locale = useI18n();
+const { locale } = useI18n();
+
+watch(locale, (newVal) => {
+  document.documentElement.lang = newVal;
+  document.documentElement.dir = newVal === "ar" ? "rtl" : "ltr";
+});
 </script>
 
 <style>

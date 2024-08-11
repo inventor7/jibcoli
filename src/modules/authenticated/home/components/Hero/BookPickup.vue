@@ -44,25 +44,3 @@
 <script setup lang="ts">
 import { Badge } from "lucide-vue-next";
 </script>
-
-<style scoped lang="scss">
-.list-move,
-.list-enter-active,
-.list-leave-active {
-  transition: all 3s ease;
-}
-
-.list-enter-from {
-  opacity: 0;
-  transform: translateX(50%);
-}
-
-.list-leave-to {
-  opacity: 0;
-  transform: translateX(-50%);
-}
-
-.list-leave-active {
-  position: absolute;
-}
-</style>

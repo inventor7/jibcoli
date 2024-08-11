@@ -10,5 +10,7 @@
   "listingLabel1": "for listing ",
     "listingLabel2": "your item",
 
-  "lang":"language"
+  "lang":"language",
+  "nothingFound":"No results found",
+  "bookTrip": "Book a Trip"
 }
