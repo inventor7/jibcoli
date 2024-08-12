@@ -1,14 +1,14 @@
 <template>
-  <DropdownMenu>
-    <DropdownMenuTrigger class="cursor-pointer" as-child>
+  <DropdownMenu >
+    <DropdownMenuTrigger  class="cursor-pointer" as-child>
       <Avatar>
         <User :size="isDesktop ? 20 : 16" />
       </Avatar>
     </DropdownMenuTrigger>
-    <DropdownMenuContent>
-      <DropdownMenu class="list-none" v-model="locale">
-        <DropdownMenuItem
-          @click="goToProfile()"
+    <DropdownMenuContent >
+      <DropdownMenu >
+        <DropdownMenuItem 
+           @click="goToProfile()"
           class="cursor-pointer gap-6"
           value="profile"
         >
@@ -30,14 +30,12 @@
 </template>
 
 <script lang="ts" setup>
-import { useI18n } from "vue-i18n";
 import { useMediaQuery } from "@vueuse/core";
 import { User } from "lucide-vue-next";
 import { Settings } from "lucide-vue-next";
 import { LogOut } from "lucide-vue-next";
 import { useRouter } from "vue-router";
 
-const { locale } = useI18n();
 const router = useRouter();
 
 const isDesktop = useMediaQuery("(min-width: 768px)");

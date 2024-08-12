@@ -3,7 +3,7 @@
   "mainHeading1": "Simplifier les ",
   "mainHeading2": "livraisons difficiles",
   "description": "Listez votre livraison et faites-la livrer par notre communauté de confiance de voyageurs.",
-  "fromLabel": "De...",
+  "fromLabel": "Sélectionnez ce que vous voulez livrer",
   "bookTripButton": "Réserver un ramassage",
   "PubsishTripButton": "Publier un voyage",
   "listingLabel1": "pour lister ",
@@ -12,6 +12,14 @@
   "nothingFound": "Aucun résultat trouvé",
   "bookTrip": "Réserver un voyage",
 
+  "electronics": "Électronique",
+  "medecines": "Médicaments",
+  "clothing": "Vêtements et accessoires",
+  "furniture": "Petits meubles",
+  "books": "Livres et documents",
+  "cosmetics": "Cosmétiques",
+  "food": "Aliments et épicerie",
+  "others": "Autres",
   "login": {
     "login": "Connexion",
     "description": "Entrez votre e-mail et votre mot de passe pour vous connecter à votre compte",

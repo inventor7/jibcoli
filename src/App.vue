@@ -2,7 +2,7 @@
   <router-view v-slot="{ Component }">
     <div
       :class="$i18n.locale === 'ar' ? 'font-arabic' : 'font-sans'"
-      class="max-w-[1440px] w-full h-full"
+      class="w-full h-full"
       :dir="$i18n.locale === 'ar' ? 'rtl' : 'ltr'"
     >
       <component :is="Component"></component>

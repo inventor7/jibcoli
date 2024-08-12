@@ -3,34 +3,56 @@ import { useForm } from "vee-validate";
 import { useMediaQuery } from "@vueuse/core";
 import { toTypedSchema } from "@vee-validate/zod";
 import * as z from "zod";
-
+import { Shirt , Heart , Smartphone , Armchair , Book  , Paintbrush , Coffee , Package } from "lucide-vue-next";
 import { toast } from "@/components/ui/toast";
 import SearchFieldFrom from "./SearchBookingPickup/SearchFieldFrom.vue";
 
 const isTablet = useMediaQuery("(min-width: 640px)");
 
-interface Language {
-  value: string;
-  label: string;
+interface Category {
+  name: string;
+  icon: any;
 }
 
-const languages: Language[] = [
-  { label: "Arabic", value: "ar" },
-  { label: "English", value: "en" },
-  { label: "French", value: "fr" },
-  { label: "German", value: "de" },
-  { label: "Spanish", value: "es" },
-  { label: "Portuguese", value: "pt" },
-  { label: "Russian", value: "ru" },
-  { label: "Japanese", value: "ja" },
-  { label: "Korean", value: "ko" },
-  { label: "Chinese", value: "zh" },
+const categories: Category[] = [
+  {
+    name: "electronics",
+    icon: Smartphone,
+  },
+  {
+    name: "medecines",
+    icon: Heart,
+  },
+  {
+    name: "clothing",
+    icon: Shirt,
+  },
+  {
+    name: "furniture",
+    icon: Armchair,
+  },
+  {
+    name: "books",
+    icon: Book,
+  },
+  {
+    name: "cosmetics",
+    icon: Paintbrush,
+  },
+  {
+    name: "food",
+    icon: Coffee,
+  },
+  {
+    name: "others",
+    icon: Package,
+  }
 ];
 
 const formSchema = toTypedSchema(
   z.object({
-    language: z.string({
-      required_error: "Please select a language.",
+    category : z.string({
+      required_error: "Please select a category.",
     }),
   })
 );
@@ -54,23 +76,10 @@ const onSubmit = handleSubmit((values) => {
     class="flex flex-col sm:flex-row justify-start items-center p-2 w-full lg:w-[60vw] max-w-6xl bg-white gap-2 rounded-2xl sm:rounded-full"
     @submit="onSubmit"
   >
-    <div class="w-full sm:w-1/3">
+    <div class="w-full">
       <SearchFieldFrom
-        @select="(lang) => setFieldValue('language', lang.value)"
-        :languages="languages"
-      />
-    </div>
-
-    <div
-      class="flex flex-row justify-between items-center gap-1 sm:gap-0 w-full sm:w-2/3"
-    >
-      <SearchFieldFrom
-        @select="(lang) => setFieldValue('language', lang.value)"
-        :languages="languages"
-      />
-      <SearchFieldFrom
-        @select="(lang) => setFieldValue('language', lang.value)"
-        :languages="languages"
+        @select="(category) => setFieldValue('category', category.name)"
+        :categories="categories"
       />
     </div>
 

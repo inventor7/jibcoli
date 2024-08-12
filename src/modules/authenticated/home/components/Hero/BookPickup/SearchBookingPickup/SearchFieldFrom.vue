@@ -8,34 +8,39 @@
               variant="ghost"
               :size="isTablet ? 'lg' : 'sm'"
               role="combobox"
-              class="rounded-full text-base sm:text-lg"
+              class="rounded-full hover:bg-transparent text-base sm:text-lg"
               :class="[
                 ' justify-between',
                 !field.value && 'text-muted-foreground',
               ]"
             >
-              {{ selectedLanguage ? selectedLanguage.label : $t("fromLabel") }}
-              <ChevronDown class="ml-2 h-4 w-4 shrink-0 opacity-50" />
+              <span class=" flex flex-row justify-center text-2xl items-center gap-2 " v-if="selectedCategory?.name" >
+            <component :size="28" :stroke-width="1.5" :is="selectedCategory.icon" />
+            {{ $t(selectedCategory.name) }}
+           </span>
+           <span v-else >
+            {{ $t("fromLabel") }}
+           </span>
             </Button>
           </FormControl>
         </PopoverTrigger>
         <PopoverContent class="p-0">
-          <Command class="h-[50vh]">
-            <CommandInput placeholder="Search language..." />
+          <Command class="max-h-[50vh]">
+            <CommandInput :aria-hidden="false" placeholder="Search language..." />
             <CommandEmpty>Nothing found.</CommandEmpty>
             <CommandList>
               <CommandGroup>
                 <CommandItem
-                  v-for="language in languages"
-                  :key="language.value"
-                  :value="language.label"
-                  @select="onLanguageSelect(language)"
+                  v-for="cat in categories"
+                  :key="cat.name"
+                  :value="cat.name"
+                  @select="onCategorySelect(cat)"
                 >
-                  {{ language.label }}
+                  {{ cat.name }}
                   <Check
                     :class="[
                       'ml-auto h-4 w-4',
-                      language.value === selectedLanguage?.value
+                      cat.name === selectedCategory?.name
                         ? 'opacity-100'
                         : 'opacity-0',
                     ]"
@@ -49,44 +54,36 @@
         <DrawerTrigger as-child>
           <Button
             variant="ghost"
-            :size="isTablet ? 'lg' : 'lg'"
+            size="xl"
             class="rounded-full justify-between bg-gray-100 w-full sm:w-fit text-base sm:text-lg px-6"
           >
-            {{
-              selectedLanguage?.value ? selectedLanguage.label : $t("fromLabel")
-            }}
+           <span class=" flex flex-row items-center gap-2 " v-if="selectedCategory?.name" >
+            <component :size="20" :stroke-width="1.5" :is="selectedCategory.icon" />
+            {{ $t(selectedCategory.name) }}
+           </span>
+           <span v-else >
+            {{ $t("fromLabel") }}
+           </span>
             <ChevronDown class="ml-2 h-4 w-4 shrink-0 opacity-50" />
           </Button>
         </DrawerTrigger>
-        <DrawerContent class="min-h-[50vh] max-h-[70vh]">
+        <DrawerContent class="h-[90vh]">
           <DrawerHeader class="hidden">
             <DrawerTitle></DrawerTitle>
             <DrawerDescription></DrawerDescription>
           </DrawerHeader>
-          <Command>
-            <CommandInput placeholder="Search language..." />
-            <CommandEmpty>{{ $t("nothingFound") }}</CommandEmpty>
-            <CommandList>
-              <CommandGroup>
-                <CommandItem
-                  v-for="language in languages"
-                  :key="language.value"
-                  :value="language.label"
-                  @select="onLanguageSelect(language)"
-                  class="text-base"
-                >
-                  {{ language.label }}
-                  <Check
-                    :class="[
-                      'ml-auto h-4 w-4',
-                      language.value === selectedLanguage?.value
-                        ? 'opacity-100'
-                        : 'opacity-0',
-                    ]"
-                  />
-                </CommandItem> </CommandGroup
-            ></CommandList>
-          </Command>
+          <div class=" grid grid-cols-2 grid-rows-4 h-full gap-2 pt-4 p-2 ">
+            <!-- the categories -->
+             <div 
+              :class ="{ ' text-white  bg-primary-600': cat.name === selectedCategory?.name }"
+             @click="onCategorySelect(cat)" class=" flex flex-col justify-around items-center w-full h-full p-3 border-[2px] rounded-lg  " v-for="cat in categories" >
+              <component
+              :size="40" :stroke-width="1.5" :is="cat.icon" />
+               <span class=" select-none text-sm text-center w-full font-bold " >{{ $t(cat.name) }}
+                </span>
+             
+             </div>
+          </div>
         </DrawerContent>
       </Drawer>
     </FormItem>
@@ -95,31 +92,40 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+import { useI18n } from "vue-i18n";
 import { useMediaQuery } from "@vueuse/core";
-import { Check, ChevronDown } from "lucide-vue-next";
+import { ChevronDown , Check } from "lucide-vue-next";
 
 import { FormField } from "@/components/ui/form";
 import { DrawerTrigger } from "@/components/ui/drawer";
 
-interface Language {
-  value: string;
-  label: string;
-}
 
-const props = defineProps<{
-  languages: Language[];
+const isTablet = useMediaQuery("(min-width: 640px)");
+const isOpen = ref(false);
+const { t } = useI18n();
+
+
+
+defineProps<{
+  categories: Category[];
 }>();
 
 const emit = defineEmits(["select", "error"]);
 
-const isDesktop = useMediaQuery("(min-width: 768px)");
-const isTablet = useMediaQuery("(min-width: 640px)");
-const isOpen = ref(false);
-const selectedLanguage = ref<Language | null>(null);
 
-function onLanguageSelect(lang: Language) {
-  emit("select", lang);
-  selectedLanguage.value = lang;
+function onCategorySelect(cat: Category) {
+  emit("select", cat);
+  selectedCategory.value = cat;
   isOpen.value = false;
 }
+
+interface Category {
+  name: string;
+  icon: any;
+}
+
+const selectedCategory = ref<Category | null>(null);
+
+
+
 </script>

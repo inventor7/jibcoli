@@ -3,7 +3,7 @@
   "mainHeading1": "Making Tricky",
   "mainHeading2": "Deliveries Simple",
   "description": "List your delivery and get it delivered by our trusted community of trippers.",
-  "fromLabel": "From...",
+  "fromLabel": "Select what you want to deliver",
   "bookTripButton": "Book a Pickup",
   "PubsishTripButton": "Pubslish a Travel",
   "listingLabel1": "for listing ",
@@ -11,6 +11,17 @@
   "lang": "language",
   "nothingFound": "No results found",
   "bookTrip": "Book a Trip",
+
+ 
+    "electronics": "Electronics",
+    "medecines": "Medecines",
+    "clothing": "Clothes and Accessories",
+    "furniture": "Small Furniture",
+    "books": "Books and Docs",
+    "cosmetics": "Cosmetics",
+    "food": "Food and groceries",
+    "others": "Others"
+  ,
 
   "login": {
     "login": "Login",

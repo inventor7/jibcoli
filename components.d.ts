@@ -13,6 +13,8 @@ declare module 'vue' {
     Avatar: typeof import('./src/components/ui/avatar/Avatar.vue')['default']
     AvatarFallback: typeof import('./src/components/ui/avatar/AvatarFallback.vue')['default']
     AvatarImage: typeof import('./src/components/ui/avatar/AvatarImage.vue')['default']
+    BackButton: typeof import('./src/components/app/BackButton.vue')['default']
+    Booking: typeof import('./src/modules/authenticated/booking/views/Booking.vue')['default']
     BookPickup: typeof import('./src/modules/authenticated/home/components/Hero/BookPickup.vue')['default']
     Button: typeof import('./src/components/ui/button/Button.vue')['default']
     Card: typeof import('./src/components/ui/card/Card.vue')['default']
@@ -67,6 +69,7 @@ declare module 'vue' {
     FormMessage: typeof import('./src/components/ui/form/FormMessage.vue')['default']
     Hero: typeof import('./src/modules/authenticated/home/components/Hero.vue')['default']
     Home: typeof import('./src/modules/authenticated/home/views/Home.vue')['default']
+    Inbox: typeof import('./src/modules/authenticated/inbox/views/Inbox.vue')['default']
     Input: typeof import('./src/components/ui/input/Input.vue')['default']
     Label: typeof import('./src/components/ui/label/Label.vue')['default']
     Login: typeof import('./src/modules/anonymous/auth/views/Login.vue')['default']
@@ -106,6 +109,7 @@ declare module 'vue' {
     ToastTitle: typeof import('./src/components/ui/toast/ToastTitle.vue')['default']
     ToastViewport: typeof import('./src/components/ui/toast/ToastViewport.vue')['default']
     Translate: typeof import('./src/components/app/Navbar/Translate.vue')['default']
+    Travels: typeof import('./src/modules/authenticated/travel/views/Travels.vue')['default']
     Welcome: typeof import('./src/modules/anonymous/welcome/views/Welcome.vue')['default']
   }
 }

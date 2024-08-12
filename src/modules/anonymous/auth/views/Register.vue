@@ -85,10 +85,9 @@ onUserError((error) => {
 
 <template>
   <div
-    style="height: calc(100vh - 120px)"
-    class="flex flex-col justify-center items-center overflow-y-scroll h-full w-full"
+    class="flex flex-col justify-center items-center overflow-y-scroll h-screen w-full"
   >
-    <Card class="mx-auto border-none max-w-sm">
+    <Card class="mx-auto sm:border-none max-w-sm">
       <CardHeader>
         <CardTitle class="text-2xl">
           {{ $t("register.register") }}

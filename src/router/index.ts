@@ -18,12 +18,6 @@ const routes: Array<RouteRecordRaw> = [
         component: () =>
           import("@/modules/anonymous/welcome/views/Welcome.vue"),
       },
-    ],
-  },
-  {
-    path: "/",
-    component: AuthLayout,
-    children: [
       {
         name: "Login",
         path: "/auth/login",
@@ -34,10 +28,35 @@ const routes: Array<RouteRecordRaw> = [
         path: "/auth/register",
         component: () => import("@/modules/anonymous/auth/views/Register.vue"),
       },
+    ],
+  },
+  {
+    path: "/",
+    component: AuthLayout,
+    children: [
       {
         path: "",
         name: "Home",
         component: () => import("@/modules/authenticated/home/views/Home.vue"),
+      },
+
+      {
+        path: "/bookings",
+        name: "Bookings",
+        component: () =>
+          import("@/modules/authenticated/booking/views/Booking.vue"),
+      },
+      {
+        path: "/travels",
+        name: "Travels",
+        component: () =>
+          import("@/modules/authenticated/travel/views/Travels.vue"),
+      },
+      {
+        path: "/inbox",
+        name: "Inbox",
+        component: () =>
+          import("@/modules/authenticated/inbox/views/Inbox.vue"),
       },
     ],
   },

@@ -1,5 +1,5 @@
 <template>
-  <div
+  <div dir="auto"
     class="relative flex flex-col lg:flex-row justify-between items-center w-full h-full gap-12"
   >
     <div

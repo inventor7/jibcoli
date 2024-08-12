@@ -1,6 +1,8 @@
 <template>
-  <div>this is anonymous layout</div>
+  <BackButton />
   <router-view></router-view>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+
+</script>
