@@ -3,7 +3,16 @@ import { useForm } from "vee-validate";
 import { useMediaQuery } from "@vueuse/core";
 import { toTypedSchema } from "@vee-validate/zod";
 import * as z from "zod";
-import { Shirt , Heart , Smartphone , Armchair , Book  , Paintbrush , Coffee , Package } from "lucide-vue-next";
+import {
+  Shirt,
+  Heart,
+  Smartphone,
+  Armchair,
+  Book,
+  Paintbrush,
+  Coffee,
+  Package,
+} from "lucide-vue-next";
 import { toast } from "@/components/ui/toast";
 import SearchFieldFrom from "./SearchBookingPickup/SearchFieldFrom.vue";
 
@@ -46,12 +55,12 @@ const categories: Category[] = [
   {
     name: "others",
     icon: Package,
-  }
+  },
 ];
 
 const formSchema = toTypedSchema(
   z.object({
-    category : z.string({
+    category: z.string({
       required_error: "Please select a category.",
     }),
   })
@@ -73,7 +82,7 @@ const onSubmit = handleSubmit((values) => {
 
 <template>
   <form
-    class="flex flex-col sm:flex-row justify-start items-center p-2 w-full lg:w-[60vw] max-w-6xl bg-white gap-2 rounded-2xl sm:rounded-full"
+    class="flex flex-col sm:flex-row justify-start items-center p-2 w-full border-0 sm:border lg:w-[60vw] max-w-6xl bg-white gap-2 rounded-2xl sm:rounded-full"
     @submit="onSubmit"
   >
     <div class="w-full">

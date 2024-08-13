@@ -9,7 +9,7 @@
     <div
       :class="$i18n.locale === 'ar' ? 'font-arabic' : 'font-sans'"
       class="w-full h-full"
-      :dir="$i18n.locale === 'ar' ? 'rtl' : 'ltr'"
+      dir="auto"
     >
       <component :is="Component"></component>
     </div>
@@ -25,22 +25,21 @@ const { locale } = useI18n();
 
 useMeta({
   title: "JibColi App",
+  history: true,
+
   htmlAttrs: {
     lang: `${locale.value}`,
     amp: true,
   },
-});
-
-watch(locale, (newVal) => {
-  document.documentElement.lang = newVal;
-  document.documentElement.dir = newVal === "ar" ? "rtl" : "ltr";
+  description:
+    "JibColi is a platform that connects people who want to buy products from abroad with travelers who can bring them.",
 });
 </script>
 
 <style>
 /* styling the scroll bar */
 ::-webkit-scrollbar {
-  @apply w-2 h-0;
+  @apply w-0 h-0;
 }
 
 ::-webkit-scrollbar-track {

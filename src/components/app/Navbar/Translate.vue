@@ -5,9 +5,12 @@
         <Languages :size="isDesktop ? 20 : 16" />
       </Avatar>
     </DropdownMenuTrigger>
-    <DropdownMenuContent>
-      <DropdownMenuRadioGroup class="list-none" v-model="locale">
-        <DropdownMenuRadioItem class="cursor-pointer gap-2" value="ar">
+    <DropdownMenuContent class="w-[50vw] sm:w-56">
+      <DropdownMenuRadioGroup class="list-none p-1" v-model="locale">
+        <DropdownMenuRadioItem
+          class="cursor-pointer py-2 sm:py-4 gap-2"
+          value="ar"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="1.34em"
@@ -23,7 +26,10 @@
           </svg>
           Arabic
         </DropdownMenuRadioItem>
-        <DropdownMenuRadioItem class="cursor-pointer gap-2" value="en">
+        <DropdownMenuRadioItem
+          class="cursor-pointer py-2 sm:py-4 gap-2"
+          value="en"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="1.34em"
@@ -48,7 +54,10 @@
           </svg>
           English
         </DropdownMenuRadioItem>
-        <DropdownMenuRadioItem class="cursor-pointer gap-2" value="fr">
+        <DropdownMenuRadioItem
+          class="cursor-pointer py-2 sm:py-4 gap-2"
+          value="fr"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="1.34em"

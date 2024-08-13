@@ -1,6 +1,6 @@
 <template>
   <div
-   
+    dir="auto"
     class="flex flex-col justify-center items-center h-screen overflow-y-scroll w-full"
   >
     <Card class="mx-auto sm:border-none max-w-sm">

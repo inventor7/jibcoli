@@ -1,5 +1,6 @@
 <template>
-  <div dir="auto"
+  <div
+    dir="auto"
     class="relative flex flex-col lg:flex-row justify-between items-center w-full h-full gap-12"
   >
     <div
@@ -14,10 +15,10 @@
       <p class="sm:text-lg text-base text-gray-600">
         {{ $t("description") }}
       </p>
-      <SearchBookingPickup class="z-20" />
+      <SearchBookingPickup class="z-20 mb-6 lg:mb-8" />
       <div class="flex flex-row justify-center items-center gap-4">
         <div class="relative">
-          <Badge class="fill-yellow-600 stroke-yellow-600" :size="96" />
+          <Badge class="fill-yellow-600 stroke-yellow-600" :size="80" />
           <p
             class="absolute text-center top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2 font-black text-2xl text-white leading-[1.1]"
           >
@@ -33,8 +34,8 @@
     <div class="flex flex-col justify-center items-end h-full select-none">
       <!-- stop user  from selecting  -->
       <img
-        src="@/assets/images/bg-hero.webp"
-        class="bg-cover hidden lg:flex lg:h-[400px] xl:h-[450px] bg-hero-img"
+        src="@/assets/images/bg-booking.png"
+        class="bg-cover animate-ultra-smmoth-slow-bounce hidden lg:flex lg:h-[400px] xl:h-[450px] bg-hero-img"
         alt="hero"
       />
     </div>
