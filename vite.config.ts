@@ -24,6 +24,7 @@ export default defineConfig({
       eslintrc: {
         enabled: true,
       },
+
       include: [
         /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
         /\.vue$/,

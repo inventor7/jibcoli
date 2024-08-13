@@ -1,4 +1,10 @@
 <template>
+  <metainfo>
+    <template v-slot:title="{ content }"
+      >{{ content ? `${content} | JibColi` : `JibColi` }}
+    </template>
+  </metainfo>
+  <header />
   <router-view v-slot="{ Component }">
     <div
       :class="$i18n.locale === 'ar' ? 'font-arabic' : 'font-sans'"
@@ -13,9 +19,17 @@
 
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
+import { useMeta } from "vue-meta";
 import { watch } from "vue";
-
 const { locale } = useI18n();
+
+useMeta({
+  title: "JibColi App",
+  htmlAttrs: {
+    lang: `${locale.value}`,
+    amp: true,
+  },
+});
 
 watch(locale, (newVal) => {
   document.documentElement.lang = newVal;

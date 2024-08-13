@@ -28,6 +28,7 @@
     "vee-validate": "^4.13.2",
     "vue": "^3.4.37",
     "vue-i18n": "^9.13.1",
+    "vue-meta": "^3.0.0-alpha.7",
     "vue-router": "^4.4.3",
     "zipson": "^0.2.12",
     "zod": "^3.23.8"
